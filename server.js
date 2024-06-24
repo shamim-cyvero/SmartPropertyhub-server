@@ -21,10 +21,9 @@ app.use(express.json({limit:'50mb'}));
 app.use(express.urlencoded({extended:true,limit:'50mb'}));
 app.use(cookieParser());
 app.use(cors({
-  origin:'*',
+  origin:['https://smartpropertyhubio-shamim-cyvero-6f3b5b48.vercel.app','http://localhost:3000'],
   methods:['GET','POST','DELETE','PUT'],
-  credentials:true,
-  
+  credentials:true, 
 }))
 
 
@@ -38,6 +37,9 @@ app.use('/api/v1/post',postRoute);
 app.use('/api/v1',contactRoute);
 
 
+app.get('/',(req,res)=>{
+  res.send('server is working')
+})
 
 
 app.listen(process.env.PORT,()=>{
