@@ -40,6 +40,8 @@ export const ContactEmail = async (req, res) => {
     const SENDER_EMAIL = process.env.SMTP_SENDER_EMAIL;
     sendEmailForContact(text, SENDER_EMAIL, "Contact from Smart-Property-Hub");
 
+    await Contact.create(req.body);
+    
     res.status(201).json({
       success: true,
       message: "message sent Successfully",

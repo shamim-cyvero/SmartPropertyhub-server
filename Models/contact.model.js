@@ -4,7 +4,6 @@ const contactSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      required: [true, "name field required"],
     },
     phone: {
       type: Number,
@@ -12,11 +11,9 @@ const contactSchema = new mongoose.Schema(
     },
     email: {
       type: String,
-      required: [true, "email field required"],
     },
     message: {
       type: String,
-      required: [true, "email field required"],
     },
   },
   { timestamps: true }
